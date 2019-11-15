@@ -22,6 +22,7 @@ public class Obstacle : MonoBehaviour
             // cue sound effect here
             audioSource.Play();
             Debug.Log("The player has touched the obstacle");
+            GameOver.IsGameOver = true; 
         }
     }
 }

@@ -19,8 +19,10 @@ public class MovingRampSupport : MonoBehaviour
     // Use fixed update for physics code, because we need to be careful about how often we call expensive, hardware intensive, physics stuff.
     private void FixedUpdate()
     {
-        
-        rigidbody.velocity = new Vector2(0, verticalInput * moveSpeed);
+        if (!GameOver.IsGameOver)
+        {
+            rigidbody.velocity = new Vector2(0, verticalInput * moveSpeed);
+        }
     }
 
     private void Update()
